@@ -1,6 +1,6 @@
-from moving_average import GPS
+from weighted_moving_average import GPS
 #import matplotlib.pyplot as plt
-n = int(input("Enter n: "))
+n = 15
 raw_data_lat = []
 raw_data_long = []
 avg_data_lat = []
@@ -21,12 +21,12 @@ for line in f:
 
 f.close()
 
-f = open('raw_data.txt', 'w')
+f = open('weighted_raw_data.txt', 'w')
 for i in range(len(raw_data_lat)):
     f.write('['+str(raw_data_lat[i])+', '+str(raw_data_long[i])+'],\n')
 f.close()
 
-f = open('avg_data.txt', 'w')
+f = open('weighted_avg_data.txt', 'w')
 for i in range(len(avg_data_lat)):
     f.write('['+str(avg_data_lat[i])+', '+str(avg_data_long[i])+'],\n')
 f.close()
